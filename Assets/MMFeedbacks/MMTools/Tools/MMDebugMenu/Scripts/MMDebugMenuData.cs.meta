@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: b950a5ce764708a4ca0425a952fce75f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TitlePrefab: {fileID: 2112759074905327847, guid: 80be1ec3d14da9c489fbefa63b82915f,
+      type: 3}
+  - ButtonPrefab: {fileID: 7110842687765492728, guid: dbb3e138861cf2040b20217e62a5edf2,
+      type: 3}
+  - ButtonBorderPrefab: {fileID: 1985568128000399461, guid: f2be8011322fbf943a44edc64dedbf2c,
+      type: 3}
+  - CheckboxPrefab: {fileID: 2731002163667230428, guid: e48b9501c5356cf4e9c390d40d81438c,
+      type: 3}
+  - SliderPrefab: {fileID: 8595552693496322647, guid: addcaa6f7df18984691dc300b3be4f7b,
+      type: 3}
+  - SpacerSmallPrefab: {fileID: 3952073977153845988, guid: 1a4b9ae95443d5a489bd918c848e2390,
+      type: 3}
+  - SpacerBigPrefab: {instanceID: 0}
+  - TextTinyPrefab: {instanceID: 0}
+  - TextSmallPrefab: {instanceID: 0}
+  - TextLongPrefab: {instanceID: 0}
+  - ValuePrefab: {instanceID: 0}
+  - TwoChoicesPrefab: {instanceID: 0}
+  - ThreeChoicesPrefab: {instanceID: 0}
+  - RegularFont: {fileID: 12800000, guid: 5686e06ef14cf104b8e282ee7c41b9a6, type: 3}
+  - BoldFont: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,42 @@
+----------------------------------------------------------------------------------------------------------------
+Forest Fire : 
+set fire to the forest, but it should only kill the enemy and not the innocent
+Can only set fire to the outer most trees
+Why are we burning the forest ? --> 
+
+
+Etity types : 
+Enemy
+Innocent
+Tree | Wet tree wont burn | Horizontal tree | Vertical Tree | any one direction out of three 
+Water Tank : makes all elements within 3 square units wet, making them impervius to flame
+
+
+Board Class
+Holds list of all nodes
+
+Node 
+Position
+Neighbours 
+Entity - 
+
+Entity - 
+Ant OnActivate(Burn)
+Cocroach / evil OnActivate(Burn)
+match OnActivate(Burn)
+water packet OnActivate(Burn)
+
+
+Art : 
+Models and 2d Art
+Base Functionality
+Variations
+Level Look and feel
+Puzzle Design
+
+
+
+
+Entity
+iBurnable
+iWashable
