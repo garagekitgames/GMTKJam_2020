@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using UnityEditor;
-using UnityEditor.Animations;
 using DG.Tweening;
 
 public class PlayerInput : MonoBehaviour
@@ -29,6 +28,8 @@ public class PlayerInput : MonoBehaviour
     public float myVelocity;
 
     public LayerMask collisionMask;
+
+    public LayerMask enemyCollisionMask;
 
     public float slowFactor = 10;
 
@@ -56,6 +57,8 @@ public class PlayerInput : MonoBehaviour
     public bool isplaying;
 
     public float reactDistance = 3f;
+
+    public float drawPathLength = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,13 +99,13 @@ public class PlayerInput : MonoBehaviour
 
         Ray ray = new Ray(position, direction);
         RaycastHit hit;
-        if (Physics.SphereCast(position, 0.35f, direction, out hit, 10)) //(Physics.Raycast(ray, out hit, 10f))
+        if (Physics.SphereCast(position, 0.35f, direction, out hit, drawPathLength, collisionMask)) //(Physics.Raycast(ray, out hit, 10f))
         {
             direction2 = Vector3.Reflect(direction, hit.normal);
             var hitPoint = hit.point;
             hitPoint.y = 0.5f;
             lineRenderer.SetPosition(1, hitPoint);
-            var distance = 10f - (hitPoint - position).magnitude;
+            var distance = drawPathLength - (hitPoint - position).magnitude;
             lineRenderer.SetPosition(2, hitPoint + direction2 * (distance + 2.5f));
 
             
@@ -113,8 +116,8 @@ public class PlayerInput : MonoBehaviour
         }
         else
         {
-            lineRenderer.SetPosition(1, position + direction * 3);
-            lineRenderer.SetPosition(2, position + direction * 10);
+            lineRenderer.SetPosition(1, position + direction * drawPathLength/2);
+            lineRenderer.SetPosition(2, position + direction * drawPathLength);
 
             //var newRotation = Quaternion.LookRotation(currentHeading).eulerAngles;
             //newRotation.x = 0;
@@ -217,18 +220,18 @@ public class PlayerInput : MonoBehaviour
         
     }
 
-    private void OnDrawGizmos()
-    {
-        Handles.color = Color.red;
-        Handles.ArrowHandleCap(0, this.transform.position + this.transform.forward * 0.25f, this.transform.rotation, 0.5f, EventType.Repaint);
+    //private void OnDrawGizmos()
+    //{
+    //    Handles.color = Color.red;
+    //    Handles.ArrowHandleCap(0, this.transform.position + this.transform.forward * 0.25f, this.transform.rotation, 0.5f, EventType.Repaint);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(this.transform.position, 0.25f);
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(this.transform.position, 0.25f);
 
-        DrawPredictedReflectionPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
+    //    DrawPredictedReflectionPattern(this.transform.position + this.transform.forward * 0.75f, this.transform.forward, maxReflectionCount);
 
 
-    }
+    //}
 
     public void HandleMovement()
     {
@@ -283,7 +286,7 @@ public class PlayerInput : MonoBehaviour
         RaycastHit hitInfo2;
 
 
-        if (Physics.SphereCast(transform.position, 1f, previousHeading, out hitInfo2, reactDistance, collisionMask)) //(Physics.Raycast(ray2, out hitInfo2, 5f, collisionMask))
+        if (Physics.SphereCast(transform.position, 1f, previousHeading, out hitInfo2, reactDistance, enemyCollisionMask)) //(Physics.Raycast(ray2, out hitInfo2, 5f, collisionMask))
         {
             if(tiltBodyToSurface)
             {
