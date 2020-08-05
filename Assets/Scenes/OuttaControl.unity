@@ -734,7 +734,7 @@ MonoBehaviour:
   DefaultShakeAmplitude: 0.5
   DefaultShakeFrequency: 10
   IdleAmplitude: 0.01
-  IdleFrequency: 0.01
+  IdleFrequency: 2.178484
   LerpSpeed: 5
   TestDuration: 0.3
   TestAmplitude: 2
@@ -7839,7 +7839,7 @@ MonoBehaviour:
   doAnimate: 1
   easeType: 27
   isplaying: 0
-  reactDistance: 0.5
+  reactDistance: 3
   drawPathLength: 5
 --- !u!54 &1325465975
 Rigidbody:
@@ -8054,7 +8054,7 @@ MonoBehaviour:
   m_NoiseProfile: {fileID: 11400000, guid: 60f294c95ff0bad418583d3b58805915, type: 2}
   m_PivotOffset: {x: 0, y: 0, z: 0}
   m_AmplitudeGain: 0.01
-  m_FrequencyGain: 0.04056205
+  m_FrequencyGain: 2.178488
   mNoiseOffsets: {x: -996.4142, y: 281.1651, z: 47.065155}
 --- !u!114 &1362215235
 MonoBehaviour:
